@@ -1,13 +1,26 @@
 import google.generativeai as genai
 import pickle
 from flask import Flask, render_template, request, jsonify
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Get the API key from .env
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+# Debugging: Print to check if the key is loaded
+if GOOGLE_API_KEY:
+    print("✅ API Key loaded successfully!")
+else:
+    print("❌ Error: API Key not found! Please check your .env file.")
+
+# Initialize Gemini API with the API key
+genai.configure(api_key=GOOGLE_API_KEY)
 
 # Initialize Flask app
 app = Flask(__name__)
-
-# Configure Gemini API (Replace with your actual API key)
-API_KEY = "AIzaSyAbhcajqobkBdR1J4Mu3smtT5aQCVhwOT4"
-genai.configure(api_key=API_KEY)
 
 # Load trained intent classification model and vectorizer
 with open("intent_model.pkl", "rb") as f:
@@ -66,7 +79,8 @@ def chat():
     return jsonify({"response": bot_response})
 
 if __name__ == "__main__":
-    app.run(debug=True)   
+    app.run(debug=True)
+
 '''
 import google.generativeai as genai
 import pickle
