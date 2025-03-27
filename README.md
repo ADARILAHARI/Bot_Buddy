@@ -29,7 +29,7 @@ Here are some previews of the Bot Buddy chatbot in action:
 ![BOT_BUDDY](static/image/screen1.png " run's in local host page and the look...!!")
 
 💬 Chatbot UI if you want to run in local host you can run the code in your local machine and you can see the chatbot UI in your local host page and reponse will be in the console
-![BOT_BUDDY](static/image/screen2.png " run's in local host page and the look with a response Bot_Buddy...!!")
+![BOT_BUDDY](static/image/Screen2.png " run's in local host page and the look with a response Bot_Buddy...!!")
 
 
  # 👨‍💻 Contributors & Contact Info
